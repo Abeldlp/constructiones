@@ -35518,6 +35518,30 @@ var map = {
 		"./resources/js/Pages/index.vue",
 		"resources_js_Pages_index_vue"
 	],
+	"./about": [
+		"./resources/js/Pages/about.vue",
+		"resources_js_Pages_about_vue"
+	],
+	"./about.vue": [
+		"./resources/js/Pages/about.vue",
+		"resources_js_Pages_about_vue"
+	],
+	"./components/navbar": [
+		"./resources/js/Pages/components/navbar.vue",
+		"resources_js_Pages_components_navbar_vue"
+	],
+	"./components/navbar.vue": [
+		"./resources/js/Pages/components/navbar.vue",
+		"resources_js_Pages_components_navbar_vue"
+	],
+	"./contact": [
+		"./resources/js/Pages/contact.vue",
+		"resources_js_Pages_contact_vue"
+	],
+	"./contact.vue": [
+		"./resources/js/Pages/contact.vue",
+		"resources_js_Pages_contact_vue"
+	],
 	"./index": [
 		"./resources/js/Pages/index.vue",
 		"resources_js_Pages_index_vue"
@@ -35525,6 +35549,14 @@ var map = {
 	"./index.vue": [
 		"./resources/js/Pages/index.vue",
 		"resources_js_Pages_index_vue"
+	],
+	"./work": [
+		"./resources/js/Pages/work.vue",
+		"resources_js_Pages_work_vue"
+	],
+	"./work.vue": [
+		"./resources/js/Pages/work.vue",
+		"resources_js_Pages_work_vue"
 	]
 };
 function webpackAsyncContext(req) {
@@ -35582,6 +35614,18 @@ module.exports = webpackAsyncContext;
 /******/ 	// It's empty as some runtime module handles the default behavior
 /******/ 	__webpack_require__.x = x => {}
 /************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => module['default'] :
+/******/ 				() => module;
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -35612,7 +35656,7 @@ module.exports = webpackAsyncContext;
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if (chunkId === "resources_js_Pages_index_vue") return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_Pages_index_vue":1,"resources_js_Pages_about_vue":1,"resources_js_Pages_components_navbar_vue":1,"resources_js_Pages_contact_vue":1,"resources_js_Pages_work_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};
@@ -35739,7 +35783,7 @@ module.exports = webpackAsyncContext;
 /******/ 					if(installedChunkData) {
 /******/ 						promises.push(installedChunkData[2]);
 /******/ 					} else {
-/******/ 						if("resources_js_Pages_index_vue" == chunkId) {
+/******/ 						if("css/app" != chunkId) {
 /******/ 							// setup Promise in chunk cache
 /******/ 							var promise = new Promise((resolve, reject) => {
 /******/ 								installedChunkData = installedChunks[chunkId] = [resolve, reject];

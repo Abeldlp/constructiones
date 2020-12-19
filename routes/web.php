@@ -17,3 +17,15 @@ use Inertia\Inertia;
 Route::get('/', function () {
     return Inertia::render('index');
 });
+
+Route::get('/sobre-nosotros', function () {
+    return Inertia::render('about');
+});
+
+Route::get('/obras', function () {
+    return Inertia::render('work');
+});
+
+Route::get('/contacta', function () {
+    return Inertia::render('contact');
+});
