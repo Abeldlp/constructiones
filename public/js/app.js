@@ -35526,6 +35526,14 @@ var map = {
 		"./resources/js/Pages/about.vue",
 		"resources_js_Pages_about_vue"
 	],
+	"./components/contactForm": [
+		"./resources/js/Pages/components/contactForm.vue",
+		"resources_js_Pages_components_contactForm_vue"
+	],
+	"./components/contactForm.vue": [
+		"./resources/js/Pages/components/contactForm.vue",
+		"resources_js_Pages_components_contactForm_vue"
+	],
 	"./components/navbar": [
 		"./resources/js/Pages/components/navbar.vue",
 		"resources_js_Pages_components_navbar_vue"
@@ -35541,6 +35549,14 @@ var map = {
 	"./components/personal.vue": [
 		"./resources/js/Pages/components/personal.vue",
 		"resources_js_Pages_components_personal_vue"
+	],
+	"./components/project": [
+		"./resources/js/Pages/components/project.vue",
+		"resources_js_Pages_components_project_vue"
+	],
+	"./components/project.vue": [
+		"./resources/js/Pages/components/project.vue",
+		"resources_js_Pages_components_project_vue"
 	],
 	"./contact": [
 		"./resources/js/Pages/contact.vue",
@@ -35664,7 +35680,7 @@ module.exports = webpackAsyncContext;
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_Pages_index_vue":1,"resources_js_Pages_about_vue":1,"resources_js_Pages_components_navbar_vue":1,"resources_js_Pages_components_personal_vue":1,"resources_js_Pages_contact_vue":1,"resources_js_Pages_work_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_Pages_index_vue":1,"resources_js_Pages_about_vue":1,"resources_js_Pages_components_contactForm_vue":1,"resources_js_Pages_components_navbar_vue":1,"resources_js_Pages_components_personal_vue":1,"resources_js_Pages_components_project_vue":1,"resources_js_Pages_contact_vue":1,"resources_js_Pages_work_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

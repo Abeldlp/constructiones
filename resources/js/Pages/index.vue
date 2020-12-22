@@ -3,7 +3,7 @@
     <div id="banner" class="w-100">
         <div id="intro">
             <h2>La casa de tus suenos</h2>
-            <h3>La casa de tus suenos es un lugar donde buscar confort</h3>
+            <h4>El lugar donde la comodidad esta al alcance de todos</h4>
         </div>
     </div>
     <div class="w-100 d-flex align-items-center justify-content-center">
@@ -11,14 +11,28 @@
     </div>
     <br>
 
-    <div id="presentation" class="pt-5">
-        <h2 class="pt-5 text-center">Contamos con el mejor equipo de profesionales</h2>
+    <div style="padding-top: 10vh">
+        <h4 class="pt-5 text-center">Ofrecemos calidad de servicio rapido y comodo</h4>
+        <h4 class="text-center pb-5">Asi es como lo hacemos posible</h4>
+        <project></project>
+    </div>
+
+
+    <div id="presentation" style="padding-top: 10vh">
+        <h3 class="pt-5 text-center">Contamos con el mejor equipo de profesionales</h3>
         <br>
-        <div class="d-flex justify-content-center flex-wrap pt-5">
+        <div class="d-flex justify-content-center flex-wrap ">
             <personal image="/storage/pageImages/ceo.jpg" name="Paco Jimenez" position="Jefe de empresa" tel="645 234 632"></personal>
             <personal image="/storage/pageImages/subceo.jpg" name="Encarni Borrero" position="Jefe de obras" tel="630 910 900"></personal>
         </div>
     </div>
+
+    <div id="contact" style="padding-top: 10vh">
+        <h1 class="pt-5 text-center">Ponte en contacto</h1>
+        <p class="text-center">Ponte en contacto sin ningun compromiso y responderemos lo antes posible</p>
+        <contact-form></contact-form>
+    </div>
+
 
 
 </template>
@@ -26,9 +40,13 @@
 <script>
 import Navbar from "./components/navbar";
 import Personal from "./components/personal";
+import Project from "./components/project";
+import ContactForm from "./components/contactForm";
 export default {
     name: "index",
     components: {
+        ContactForm,
+        Project,
         Personal,
         Navbar
     },
