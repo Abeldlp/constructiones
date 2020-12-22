@@ -8,9 +8,16 @@
     </div>
     <div class="w-100 d-flex align-items-center justify-content-center">
         <img id="down-image" src="/storage/pageImages/downthin.png"/>
-<!--        <transition name="fade">-->
-<!--            <img id="down-image" src="/storage/pageImages/downthin.png"/>-->
-<!--        </transition>-->
+    </div>
+    <br>
+
+    <div id="presentation" class="pt-5">
+        <h2 class="pt-5 text-center">Contamos con el mejor equipo de profesionales</h2>
+        <br>
+        <div class="d-flex justify-content-center flex-wrap pt-5">
+            <personal image="/storage/pageImages/ceo.jpg" name="Paco Jimenez" position="Jefe de empresa" tel="645 234 632"></personal>
+            <personal image="/storage/pageImages/subceo.jpg" name="Encarni Borrero" position="Jefe de obras" tel="630 910 900"></personal>
+        </div>
     </div>
 
 
@@ -18,9 +25,13 @@
 
 <script>
 import Navbar from "./components/navbar";
+import Personal from "./components/personal";
 export default {
     name: "index",
-    components: {Navbar},
+    components: {
+        Personal,
+        Navbar
+    },
     mounted() {
         this.dropArrow()
         this.showIntro()
@@ -69,6 +80,7 @@ export default {
         opacity: 0;
         transition: all ease-in-out 0.5s;
         transform: translateY(40px);
+        border-radius: 5px;
     }
 
     #down-image{
@@ -77,5 +89,8 @@ export default {
         opacity: 0;
     }
 
+    #presentation{
+        height: 500px;
+    }
 
 </style>
