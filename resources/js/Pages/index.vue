@@ -12,25 +12,28 @@
     <br>
 
     <div style="padding-top: 10vh">
-        <h4 class="pt-5 text-center">Ofrecemos calidad de servicio rapido y comodo</h4>
+        <h1 class="pt-5 text-center">Ofrecemos calidad de servicio rapido y comodo</h1>
         <h4 class="text-center pb-5">Asi es como lo hacemos posible</h4>
         <project></project>
     </div>
 
 
-    <div id="presentation" style="padding-top: 10vh">
-        <h3 class="pt-5 text-center">Contamos con el mejor equipo de profesionales</h3>
+    <div id="presentation" style="padding-top: 10vh; height: auto">
+        <h3 class="pt-5 text-center">El mejor equipo de profesionales</h3>
         <br>
-        <div class="d-flex justify-content-center flex-wrap ">
+        <div class="d-flex justify-content-center flex-wrap">
             <personal image="/storage/pageImages/ceo.jpg" name="Paco Jimenez" position="Jefe de empresa" tel="645 234 632"></personal>
             <personal image="/storage/pageImages/subceo.jpg" name="Encarni Borrero" position="Jefe de obras" tel="630 910 900"></personal>
+        </div>
+        <div class="w-75 m-auto">
+            <evaluation></evaluation>
         </div>
     </div>
 
     <div id="contact" style="padding-top: 10vh">
         <h1 class="pt-5 text-center">Ponte en contacto</h1>
-        <p class="text-center">Ponte en contacto sin ningun compromiso y responderemos lo antes posible</p>
-        <contact-form></contact-form>
+        <p class="text-center pb-4">Ponte en contacto sin ningun compromiso y responderemos lo antes posible</p>
+        <contact-form class="mt-4"></contact-form>
     </div>
 
 
@@ -42,9 +45,11 @@ import Navbar from "./components/navbar";
 import Personal from "./components/personal";
 import Project from "./components/project";
 import ContactForm from "./components/contactForm";
+import Evaluation from "./components/evaluation";
 export default {
     name: "index",
     components: {
+        Evaluation,
         ContactForm,
         Project,
         Personal,

@@ -59,7 +59,7 @@ var _hoisted_3 = {
   id: "contact_form"
 };
 var _hoisted_4 = {
-  "class": "d-flex w-50 justify-content-between mt-3"
+  "class": "d-flex w-50 justify-content-between mt-3 align-items-center"
 };
 
 var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
@@ -69,7 +69,7 @@ var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
 );
 
 var _hoisted_6 = {
-  "class": "d-flex w-50 justify-content-between mt-3"
+  "class": "d-flex w-50 justify-content-between mt-3 align-items-center"
 };
 
 var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
@@ -79,7 +79,7 @@ var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
 );
 
 var _hoisted_8 = {
-  "class": "d-flex w-50 justify-content-between mt-3"
+  "class": "d-flex w-50 justify-content-between mt-3 align-items-center"
 };
 
 var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
@@ -89,7 +89,7 @@ var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
 );
 
 var _hoisted_10 = {
-  "class": "d-flex w-50 justify-content-between mt-3"
+  "class": "d-flex w-50 justify-content-between mt-3 align-items-center"
 };
 
 var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
@@ -99,7 +99,7 @@ var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 );
 
 var _hoisted_12 = {
-  "class": "d-flex w-50 justify-content-between mt-3"
+  "class": "d-flex w-50 justify-content-between mt-3 align-items-center"
 };
 
 var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
@@ -254,17 +254,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _storage_app_public_pageImages_background_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../storage/app/public/pageImages/background.jpg */ "./storage/app/public/pageImages/background.jpg");
 // Imports
 
-
-
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
-var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_storage_app_public_pageImages_background_jpg__WEBPACK_IMPORTED_MODULE_2__.default);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n#contact_form[data-v-3167fed4]{\n        width: 70%;\n        height: 600px;\n        max-width: 700px;\n        min-width: 400px;\n        border-radius: 5px;\n        display: flex;\n        flex-direction: column;\n        justify-content: center;align-items: center;\n        background-color: white;\n        box-shadow: 0px 10px 12px -2px rgba(0,0,0,0.3);\n}\n#back_image[data-v-3167fed4]{\n        position: absolute;\n        width: 100%;\n        height: 700px;\n        background: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n        z-index: -1;\n        -webkit-clip-path: polygon(0 44%, 100% 0, 100% 100%, 0% 100%);\n                clip-path: polygon(0 44%, 100% 0, 100% 100%, 0% 100%);\n}\nbutton[data-v-3167fed4]{\n        border: none;\n        padding: 10px 20px;\n        color: white;\n        background-color: rgb(24,120,141);\n        border-radius: 5px;\n        margin-top: 40px;\n        transition: all ease-in-out 0.3s;\n}\nbutton[data-v-3167fed4]:hover{\n        background-color: rgb(119,208,206);\n}\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n#contact_form[data-v-3167fed4]{\n        width: 70%;\n        height: 600px;\n        max-width: 700px;\n        min-width: 400px;\n        border-radius: 5px;\n        display: flex;\n        flex-direction: column;\n        justify-content: center;align-items: center;\n        background-color: white;\n        box-shadow: 0px 10px 12px -2px rgba(0,0,0,0.3);\n}\n#back_image[data-v-3167fed4]{\n        position: absolute;\n        width: 100%;\n        height: 700px;\n        /*background-color: rgb(230,209,178);*/\n        background-image: linear-gradient( 44.8deg,  rgba(255,136,102,0.67) -53.1%, rgba(255,221,136,0.28) 49% );\n        z-index: -1;\n        -webkit-clip-path: polygon(0 44%, 100% 0, 100% 100%, 0% 100%);\n                clip-path: polygon(0 44%, 100% 0, 100% 100%, 0% 100%);\n}\nbutton[data-v-3167fed4]{\n        border: none;\n        padding: 10px 20px;\n        color: white;\n        background-color: rgb(24,120,141);\n        border-radius: 5px;\n        margin-top: 40px;\n        transition: all ease-in-out 0.3s;\n}\nbutton[data-v-3167fed4]:hover{\n        background-color: rgb(119,208,206);\n}\ninput[data-v-3167fed4]{\n        padding: 5px;\n}\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -344,65 +338,6 @@ module.exports = function (cssWithMappingToString) {
 
   return list;
 };
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/runtime/getUrl.js":
-/*!********************************************************!*\
-  !*** ./node_modules/css-loader/dist/runtime/getUrl.js ***!
-  \********************************************************/
-/***/ ((module) => {
-
-"use strict";
-
-
-module.exports = function (url, options) {
-  if (!options) {
-    // eslint-disable-next-line no-param-reassign
-    options = {};
-  } // eslint-disable-next-line no-underscore-dangle, no-param-reassign
-
-
-  url = url && url.__esModule ? url.default : url;
-
-  if (typeof url !== 'string') {
-    return url;
-  } // If url is already wrapped in quotes, remove them
-
-
-  if (/^['"].*['"]$/.test(url)) {
-    // eslint-disable-next-line no-param-reassign
-    url = url.slice(1, -1);
-  }
-
-  if (options.hash) {
-    // eslint-disable-next-line no-param-reassign
-    url += options.hash;
-  } // Should url be wrapped?
-  // See https://drafts.csswg.org/css-values-3/#urls
-
-
-  if (/["'() \t\n]/.test(url) || options.needQuotes) {
-    return "\"".concat(url.replace(/"/g, '\\"').replace(/\n/g, '\\n'), "\"");
-  }
-
-  return url;
-};
-
-/***/ }),
-
-/***/ "./storage/app/public/pageImages/background.jpg":
-/*!******************************************************!*\
-  !*** ./storage/app/public/pageImages/background.jpg ***!
-  \******************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/background.jpg?0af73cee8f40947c93aace9293884e78");
 
 /***/ }),
 
