@@ -39,10 +39,15 @@
                     <template v-slot:content>
                         <div class="vueperslide__content-wrapper">
                             <div class="d-flex justify-content-start align-items-center">
-                                <div>{{ i.title }}</div>
-                                <h3 class="pl-3">{{i.score}}</h3>
+                                <div class="pr-4">{{ i.title }}</div>
+                                <star-rating
+                                    :rating="i.score"
+                                    :fixed-points="true"
+                                    :star-size="20"
+                                    :round-start-rating="false"
+                                ></star-rating>
                             </div>
-                            <p class="p-3 text-left">{{i.content}}</p>
+                            <p class="p-5 text-left">{{i.content}}</p>
                         </div>
                     </template>
                 </vueper-slide>
@@ -67,6 +72,7 @@ import Project from "./components/project";
 import ContactForm from "./components/contactForm";
 import Evaluation from "./components/evaluation";
 import { VueperSlides, VueperSlide } from 'vueperslides'
+import StarRating from 'vue-star-rating'
 import 'vueperslides/dist/vueperslides.css'
 export default {
     name: "index",
@@ -77,7 +83,8 @@ export default {
         Personal,
         Navbar,
         VueperSlide,
-        VueperSlides
+        VueperSlides,
+        StarRating
     },
     mounted() {
         this.dropArrow()
@@ -104,32 +111,32 @@ export default {
             slides: [
                 {
                     title: 'Maria Jose',
-                    score: '4.8',
+                    score: 4.8,
                     content: 'La mejor reforma! Todo acabado a tiempo y sin ningun problema'
                 },
                 {
                     title: 'Ricardo Garcia',
-                    score: '5',
+                    score: 5,
                     content: 'Los mejores pofesionales que se pueden encontrar, maravilla de personal'
                 },
                 {
                     title: 'Lope Miranda',
-                    score: '4.7',
+                    score: 4.7,
                     content: 'No he encontrado un servicion igual al que me han proporcionado'
                 },
                 {
                     title: 'Paula Ramirez',
-                    score: '4.9',
+                    score: 4.9,
                     content: 'Increible servicios, pocos quedan asi'
                 },
                 {
                     title: 'Fernando Oregon',
-                    score: '4.8',
+                    score: 4.8,
                     content: 'Me sonprendio la rapidez con la que trabajan'
                 },
                 {
                     title: 'Maria Gutierrez',
-                    score: '5',
+                    score: 5,
                     content: 'Tal y como dice en la pagina, la casa de mis suenos'
                 },
             ]
