@@ -30,6 +30,7 @@
     "dependencies": {
         "@inertiajs/inertia": "^0.4.1",
         "@inertiajs/inertia-vue3": "^0.1.1",
-        "vue": "^3.0.4"
+        "vue": "^3.0.4",
+        "vueperslides": "^3.2.0"
     }
 }

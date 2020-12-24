@@ -26,7 +26,27 @@
             <personal image="/storage/pageImages/subceo.jpg" name="Encarni Borrero" position="Jefe de obras" tel="630 910 900"></personal>
         </div>
         <div class="w-75 m-auto">
-            <evaluation></evaluation>
+            <vueper-slides
+                class="no-shadow"
+                id="slide"
+                :visible-slides="3"
+                slide-multiple
+                :gap="3"
+                :slide-ratio="1 / 4"
+                :dragging-distance="200"
+                :breakpoints="{ 800: { visibleSlides: 2, slideMultiple: 2 } }">
+                <vueper-slide v-for="i in slides" :key="i" :title="i.title" :content="i.content">
+                    <template v-slot:content>
+                        <div class="vueperslide__content-wrapper">
+                            <div class="d-flex justify-content-start align-items-center">
+                                <div>{{ i.title }}</div>
+                                <h3 class="pl-3">{{i.score}}</h3>
+                            </div>
+                            <p class="p-3 text-left">{{i.content}}</p>
+                        </div>
+                    </template>
+                </vueper-slide>
+            </vueper-slides>
         </div>
     </div>
 
@@ -46,6 +66,8 @@ import Personal from "./components/personal";
 import Project from "./components/project";
 import ContactForm from "./components/contactForm";
 import Evaluation from "./components/evaluation";
+import { VueperSlides, VueperSlide } from 'vueperslides'
+import 'vueperslides/dist/vueperslides.css'
 export default {
     name: "index",
     components: {
@@ -53,7 +75,9 @@ export default {
         ContactForm,
         Project,
         Personal,
-        Navbar
+        Navbar,
+        VueperSlide,
+        VueperSlides
     },
     mounted() {
         this.dropArrow()
@@ -73,6 +97,42 @@ export default {
                 arrow.style.transform = 'translateY(20px)'
                 arrow.style.opacity = 1
             }, 2000);
+        }
+    },
+    data(){
+        return {
+            slides: [
+                {
+                    title: 'Maria Jose',
+                    score: '4.8',
+                    content: 'La mejor reforma! Todo acabado a tiempo y sin ningun problema'
+                },
+                {
+                    title: 'Ricardo Garcia',
+                    score: '5',
+                    content: 'Los mejores pofesionales que se pueden encontrar, maravilla de personal'
+                },
+                {
+                    title: 'Lope Miranda',
+                    score: '4.7',
+                    content: 'No he encontrado un servicion igual al que me han proporcionado'
+                },
+                {
+                    title: 'Paula Ramirez',
+                    score: '4.9',
+                    content: 'Increible servicios, pocos quedan asi'
+                },
+                {
+                    title: 'Fernando Oregon',
+                    score: '4.8',
+                    content: 'Me sonprendio la rapidez con la que trabajan'
+                },
+                {
+                    title: 'Maria Gutierrez',
+                    score: '5',
+                    content: 'Tal y como dice en la pagina, la casa de mis suenos'
+                },
+            ]
         }
     }
 }
@@ -116,4 +176,7 @@ export default {
         height: 500px;
     }
 
+    #slide{
+        margin: 5px;
+    }
 </style>
