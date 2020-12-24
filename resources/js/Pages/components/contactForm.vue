@@ -33,14 +33,16 @@
                     <div><input v-model="contact_method" name="contact_method"  type="radio" value="telefono"> <span>Telefono</span></div>
                 </div>
             </div>
-            <button>Enviar</button>
+            <evaluation @finished="sendData"></evaluation>
         </div>
     </div>
 </template>
 
 <script>
+import Evaluation from "./evaluation";
 export default {
     name: "contactForm",
+    components: {Evaluation},
     data(){
         return{
             first_name: '',
@@ -49,6 +51,14 @@ export default {
             tel: '',
             inquiry: 'Obra',
             contact_method : 'email'
+        }
+    },
+    methods : {
+        sendData(){
+            this.first_name = ''
+            this.last_name = ''
+            this.email = ''
+            this.tel = ''
         }
     }
 }
@@ -79,22 +89,18 @@ export default {
         clip-path: polygon(0 44%, 100% 0, 100% 100%, 0% 100%);
     }
 
-    button{
-        border: none;
-        padding: 10px 20px;
-        color: white;
-        background-color: rgb(24,120,141);
-        border-radius: 5px;
-        margin-top: 40px;
+    input{
+        padding: 5px;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid rgb(217, 188, 117);
         transition: all ease-in-out 0.3s;
     }
 
-    button:hover{
-        background-color: rgb(119,208,206);
-    }
-
-    input{
-        padding: 5px;
+    input:focus{
+        border-bottom: 1px solid  rgba(255,136,102,0.67);
+        outline: none;
     }
 
 </style>

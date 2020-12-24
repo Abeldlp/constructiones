@@ -45,6 +45,8 @@
                                     :fixed-points="true"
                                     :star-size="20"
                                     :round-start-rating="false"
+                                    :animate="true"
+
                                 ></star-rating>
                             </div>
                             <p class="p-5 text-left">{{i.content}}</p>
@@ -58,6 +60,8 @@
     <div id="contact" style="padding-top: 10vh">
         <h1 class="pt-5 text-center">Ponte en contacto</h1>
         <p class="text-center pb-4">Ponte en contacto sin ningun compromiso y responderemos lo antes posible</p>
+        <br>
+        <br>
         <contact-form class="mt-4"></contact-form>
     </div>
 
@@ -126,7 +130,7 @@ export default {
                 },
                 {
                     title: 'Paula Ramirez',
-                    score: 4.9,
+                    score: 4.5,
                     content: 'Increible servicios, pocos quedan asi'
                 },
                 {
