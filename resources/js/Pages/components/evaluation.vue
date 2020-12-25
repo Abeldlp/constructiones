@@ -1,6 +1,5 @@
 <template>
-
-        <button id="button" @click="send"></button>
+    <button id="button" type="submit" @click="send"></button>
 </template>
 
 <script>

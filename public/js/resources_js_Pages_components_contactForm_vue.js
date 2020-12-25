@@ -30,6 +30,15 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     sendData: function sendData() {
+      var sendData = {
+        first_name: this.first_name.toUpperCase(),
+        last_name: this.last_name.toUpperCase(),
+        email: this.email,
+        tel: '+31' + this.tel,
+        inquiry: this.inquiry,
+        contact_method: this.contact_method
+      };
+      axios.post('/requests/users', sendData);
       this.first_name = '';
       this.last_name = '';
       this.email = '';
@@ -316,6 +325,7 @@ var _withId = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.withScopeId)("dat
 var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("button", {
     id: "button",
+    type: "submit",
     onClick: _cache[1] || (_cache[1] = function () {
       return $options.send && $options.send.apply($options, arguments);
     })
@@ -365,7 +375,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n#contact_form[data-v-3167fed4]{\n        width: 70%;\n        height: 600px;\n        max-width: 700px;\n        min-width: 400px;\n        border-radius: 5px;\n        display: flex;\n        flex-direction: column;\n        justify-content: center;align-items: center;\n        background-color: white;\n        box-shadow: 0px 10px 12px -2px rgba(0,0,0,0.3);\n}\n#back_image[data-v-3167fed4]{\n        position: absolute;\n        width: 100%;\n        height: 700px;\n        /*background-color: rgb(230,209,178);*/\n        background-image: linear-gradient( 44.8deg,  rgba(255,136,102,0.67) -53.1%, rgba(255,221,136,0.28) 49% );\n        z-index: -1;\n        -webkit-clip-path: polygon(0 44%, 100% 0, 100% 100%, 0% 100%);\n                clip-path: polygon(0 44%, 100% 0, 100% 100%, 0% 100%);\n}\ninput[data-v-3167fed4]{\n        padding: 5px;\n        border-top: none;\n        border-left: none;\n        border-right: none;\n        border-bottom: 1px solid rgb(217, 188, 117);\n        transition: all ease-in-out 0.3s;\n}\ninput[data-v-3167fed4]:focus{\n        border-bottom: 1px solid  rgba(255,136,102,0.67);\n        outline: none;\n}\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n#contact_form[data-v-3167fed4]{\n        width: 70%;\n        height: 600px;\n        max-width: 700px;\n        min-width: 400px;\n        border-radius: 5px;\n        display: flex;\n        flex-direction: column;\n        justify-content: center;align-items: center;\n        background-color: white;\n        box-shadow: 0px 10px 12px -2px rgba(0,0,0,0.3);\n}\n#back_image[data-v-3167fed4]{\n        position: absolute;\n        width: 100%;\n        height: 700px;\n        background-image: linear-gradient( 44.8deg,  rgba(255,136,102,0.67) -53.1%, rgba(255,221,136,0.28) 49% );\n        z-index: -1;\n        -webkit-clip-path: polygon(0 44%, 100% 0, 100% 100%, 0% 100%);\n                clip-path: polygon(0 44%, 100% 0, 100% 100%, 0% 100%);\n}\ninput[data-v-3167fed4]{\n        padding: 5px;\n        border-top: none;\n        border-left: none;\n        border-right: none;\n        border-bottom: 1px solid rgb(217, 188, 117);\n        transition: all ease-in-out 0.3s;\n}\ninput[data-v-3167fed4]:focus{\n        border-bottom: 1px solid  rgba(255,136,102,0.67);\n        outline: none;\n}\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

@@ -7,7 +7,7 @@
                 <input v-model="first_name" class="w-75 ml-5"/>
             </div>
             <div class="d-flex w-50 justify-content-between mt-3 align-items-center">
-                <span class="w-25">Apellido</span>
+                <span class="w-25" >Apellido</span>
                 <input v-model="last_name" class="w-75 ml-5"/>
             </div>
             <div class="d-flex w-50 justify-content-between mt-3 align-items-center">
@@ -55,10 +55,23 @@ export default {
     },
     methods : {
         sendData(){
+            let sendData = {
+                first_name: this.first_name.toUpperCase(),
+                last_name: this.last_name.toUpperCase(),
+                email: this.email,
+                tel: '+31' + this.tel,
+                inquiry: this.inquiry,
+                contact_method : this.contact_method
+            }
+
+            axios.post('/requests/users', sendData)
+
+
             this.first_name = ''
             this.last_name = ''
             this.email = ''
             this.tel = ''
+
         }
     }
 }
@@ -83,7 +96,6 @@ export default {
         position: absolute;
         width: 100%;
         height: 700px;
-        /*background-color: rgb(230,209,178);*/
         background-image: linear-gradient( 44.8deg,  rgba(255,136,102,0.67) -53.1%, rgba(255,221,136,0.28) 49% );
         z-index: -1;
         clip-path: polygon(0 44%, 100% 0, 100% 100%, 0% 100%);
