@@ -31,6 +31,11 @@ Route::prefix('/')->group(function () {
 
     Route::prefix('/admin')->group(function(){
         Route::get('/nueva_obra', 'ConstructionController@create');
+
+        Route::prefix('/clientes')->group(function () {
+            Route::get('/', 'InquiryController@index');
+            Route::delete('/delete/{id}', 'InquiryController@destroy');
+        });
     });
 });
 

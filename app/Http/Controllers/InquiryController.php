@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\Inquiry;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class InquiryController extends Controller
 {
     public function index()
     {
-        //
+        $inquiries = (new Inquiry())->all();
+        return Inertia::render('admin/inquiries', compact('inquiries'));
     }
 
     public function create()
@@ -54,6 +56,7 @@ class InquiryController extends Controller
 
     public function destroy($id)
     {
-        //
+        (new Inquiry())->find($id)->delete();
+
     }
 }
