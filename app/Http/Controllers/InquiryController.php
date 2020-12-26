@@ -29,6 +29,7 @@ class InquiryController extends Controller
         ],
         [
             'first_name.required' => 'Por favor escribe tu nombre',
+            'last_name.required' => 'Por favor escribe tus apellidos',
             'email.required_without' => 'Si no dejas tu numero deja tu email',
             'tel.required_without' => 'Si no dejas tu email deja tu numero',
         ]);

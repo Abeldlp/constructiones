@@ -25,15 +25,6 @@ export default {
             let button = document.getElementById('button')
             button.classList.remove( "onclic" );
             button.classList.add(('validate'))
-
-            // setTimeout(function() {
-            //     button.classList.remove( "onclic" );
-            //     button.classList.add(('validate'))
-            // }, 1250 )
-
-            // setTimeout(() => {
-            //     this.$emit('finished')
-            // }, 1250 )
         },
         resend(){
             let button = document.getElementById('button')

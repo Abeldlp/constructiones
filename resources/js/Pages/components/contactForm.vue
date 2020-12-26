@@ -10,7 +10,7 @@
                 <input v-model="first_name" class="w-75 ml-5"/>
             </div>
             <div class="d-flex w-50 justify-content-between mt-3 align-items-center">
-                <span class="w-25" >Apellido</span>
+                <span class="w-25" >Apellidos</span>
                 <input v-model="last_name" class="w-75 ml-5"/>
             </div>
             <div class="d-flex w-50 justify-content-between mt-3 align-items-center">

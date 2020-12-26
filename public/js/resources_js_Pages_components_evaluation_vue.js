@@ -36,13 +36,7 @@ __webpack_require__.r(__webpack_exports__);
     finishIt: function finishIt() {
       var button = document.getElementById('button');
       button.classList.remove("onclic");
-      button.classList.add('validate'); // setTimeout(function() {
-      //     button.classList.remove( "onclic" );
-      //     button.classList.add(('validate'))
-      // }, 1250 )
-      // setTimeout(() => {
-      //     this.$emit('finished')
-      // }, 1250 )
+      button.classList.add('validate');
     },
     resend: function resend() {
       var button = document.getElementById('button');

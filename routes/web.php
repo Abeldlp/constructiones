@@ -14,20 +14,27 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('index');
+Route::prefix('/')->group(function () {
+    Route::get('/', function () {
+        return Inertia::render('index');
+    });
+    Route::post('/save_inquiry', 'InquiryController@store');
+    Route::get('/sobre-nosotros', function () {
+        return Inertia::render('about');
+    });
+
+    Route::get('/obras', 'ConstructionController@index');
+
+    Route::get('/contacta', function () {
+        return Inertia::render('contact');
+    });
+
+    Route::prefix('/admin')->group(function(){
+        Route::get('/nueva_obra', 'ConstructionController@create');
+    });
 });
 
-Route::post('/save_inquiry', 'InquiryController@store');
 
-Route::get('/sobre-nosotros', function () {
-    return Inertia::render('about');
-});
 
-Route::get('/obras', function () {
-    return Inertia::render('work');
-});
 
-Route::get('/contacta', function () {
-    return Inertia::render('contact');
-});
+
