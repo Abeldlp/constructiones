@@ -27,14 +27,27 @@ __webpack_require__.r(__webpack_exports__);
       if (!this.sent) {
         button.classList.add('onclic');
         this.sent = true;
-        setTimeout(function () {
-          button.classList.remove("onclic");
-          button.classList.add('validate');
-        }, 1250);
-        setTimeout(function () {
-          _this.$emit('finished');
-        }, 1250);
       }
+
+      setTimeout(function () {
+        _this.$emit('finished');
+      }, 1250);
+    },
+    finishIt: function finishIt() {
+      var button = document.getElementById('button');
+      button.classList.remove("onclic");
+      button.classList.add('validate'); // setTimeout(function() {
+      //     button.classList.remove( "onclic" );
+      //     button.classList.add(('validate'))
+      // }, 1250 )
+      // setTimeout(() => {
+      //     this.$emit('finished')
+      // }, 1250 )
+    },
+    resend: function resend() {
+      var button = document.getElementById('button');
+      button.classList.remove('onclic');
+      this.sent = false;
     }
   }
 });

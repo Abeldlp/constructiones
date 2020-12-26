@@ -25,24 +25,35 @@ __webpack_require__.r(__webpack_exports__);
       email: '',
       tel: '',
       inquiry: 'Obra',
-      contact_method: 'email'
+      contact_method: 'email',
+      errors: []
     };
   },
   methods: {
     sendData: function sendData() {
+      var _this = this;
+
       var sendData = {
         first_name: this.first_name.toUpperCase(),
         last_name: this.last_name.toUpperCase(),
         email: this.email,
-        tel: '+31' + this.tel,
+        tel: this.tel,
         inquiry: this.inquiry,
         contact_method: this.contact_method
       };
-      axios.post('/requests/users', sendData);
-      this.first_name = '';
-      this.last_name = '';
-      this.email = '';
-      this.tel = '';
+      axios.post('/save_inquiry', sendData).then(function (res) {
+        _this.$refs.submitform.finishIt();
+
+        _this.first_name = '';
+        _this.last_name = '';
+        _this.email = '';
+        _this.tel = '';
+        _this.errors = [];
+      })["catch"](function (error) {
+        _this.errors = error.response.data.errors;
+
+        _this.$refs.submitform.resend();
+      });
     }
   }
 });
@@ -76,14 +87,27 @@ __webpack_require__.r(__webpack_exports__);
       if (!this.sent) {
         button.classList.add('onclic');
         this.sent = true;
-        setTimeout(function () {
-          button.classList.remove("onclic");
-          button.classList.add('validate');
-        }, 1250);
-        setTimeout(function () {
-          _this.$emit('finished');
-        }, 1250);
       }
+
+      setTimeout(function () {
+        _this.$emit('finished');
+      }, 1250);
+    },
+    finishIt: function finishIt() {
+      var button = document.getElementById('button');
+      button.classList.remove("onclic");
+      button.classList.add('validate'); // setTimeout(function() {
+      //     button.classList.remove( "onclic" );
+      //     button.classList.add(('validate'))
+      // }, 1250 )
+      // setTimeout(() => {
+      //     this.$emit('finished')
+      // }, 1250 )
+    },
+    resend: function resend() {
+      var button = document.getElementById('button');
+      button.classList.remove('onclic');
+      this.sent = false;
     }
   }
 });
@@ -224,7 +248,13 @@ var _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data, $options) {
   var _component_evaluation = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("evaluation");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("ul", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.errors, function (error) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("li", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(error[0]), 1
+    /* TEXT */
+    );
+  }), 256
+  /* UNKEYED_FRAGMENT */
+  ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
     "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
       return $data.first_name = $event;
     }),
@@ -298,7 +328,8 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
   }, null, 512
   /* NEED_PATCH */
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelRadio, $data.contact_method]]), _hoisted_26, _hoisted_27])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_evaluation, {
-    onFinished: $options.sendData
+    onFinished: $options.sendData,
+    ref: "submitform"
   }, null, 8
   /* PROPS */
   , ["onFinished"])])]);

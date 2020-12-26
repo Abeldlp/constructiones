@@ -2,6 +2,9 @@
     <div class="d-flex justify-content-center align-items-center">
         <div id="back_image"></div>
         <div id="contact_form">
+            <ul>
+                <li v-for="error in errors">{{error[0]}}</li>
+            </ul>
             <div class="d-flex w-50 justify-content-between mt-3 align-items-center">
                 <span class="w-25">Nombre</span>
                 <input v-model="first_name" class="w-75 ml-5"/>
@@ -33,7 +36,7 @@
                     <div><input v-model="contact_method" name="contact_method"  type="radio" value="telefono"> <span>Telefono</span></div>
                 </div>
             </div>
-            <evaluation @finished="sendData"></evaluation>
+            <evaluation @finished="sendData" ref="submitform"></evaluation>
         </div>
     </div>
 </template>
@@ -50,7 +53,8 @@ export default {
             email: '',
             tel: '',
             inquiry: 'Obra',
-            contact_method : 'email'
+            contact_method : 'email',
+            errors : []
         }
     },
     methods : {
@@ -59,19 +63,24 @@ export default {
                 first_name: this.first_name.toUpperCase(),
                 last_name: this.last_name.toUpperCase(),
                 email: this.email,
-                tel: '+31' + this.tel,
+                tel: this.tel,
                 inquiry: this.inquiry,
                 contact_method : this.contact_method
             }
 
-            axios.post('/requests/users', sendData)
-
-
-            this.first_name = ''
-            this.last_name = ''
-            this.email = ''
-            this.tel = ''
-
+            axios.post('/save_inquiry', sendData)
+                .then(res => {
+                    this.$refs.submitform.finishIt()
+                    this.first_name = ''
+                    this.last_name = ''
+                    this.email = ''
+                    this.tel = ''
+                    this.errors = []
+                })
+                .catch(error => {
+                    this.errors = error.response.data.errors
+                    this.$refs.submitform.resend()
+                })
         }
     }
 }

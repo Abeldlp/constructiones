@@ -18,6 +18,8 @@ Route::get('/', function () {
     return Inertia::render('index');
 });
 
+Route::post('/save_inquiry', 'InquiryController@store');
+
 Route::get('/sobre-nosotros', function () {
     return Inertia::render('about');
 });
