@@ -10,7 +10,8 @@
             <th scope="col">Telefono</th>
             <th scope="col">Tipo</th>
             <th scope="col">Contacto</th>
-            <th scope="col"></th>
+            <th scope="col">Hecho</th>
+            <th></th>
         </tr>
         </thead>
         <tbody>
@@ -23,10 +24,11 @@
             <td>{{inquiry.inquiry}}</td>
             <td>{{inquiry.contact_method}}</td>
             <td>
-                <div>
-                    <button class="btn btn-outline-info">Hecho</button>
-                    <button @click="deleteInquiry(inquiry.id)" class="btn btn-light">Detele</button>
-                </div>
+                <button v-if="!inquiry.done" @click="setAsDone(inquiry.id)" class="btn btn-outline-info">Hecho</button>
+                <span v-else>{{inquiry.done}}</span>
+            </td>
+            <td>
+                <button @click="deleteInquiry(inquiry.id)" class="btn btn-light">Detele</button>
             </td>
         </tr>
         </tbody>
@@ -44,6 +46,10 @@ export default {
     methods : {
         deleteInquiry(inquiryId){
             axios.delete(`/admin/clientes/delete/${inquiryId}`)
+                .then(res => location.reload())
+        },
+        setAsDone(inquiryId){
+            axios.put(`/admin/clientes/update/${inquiryId}`)
                 .then(res => location.reload())
         }
     }

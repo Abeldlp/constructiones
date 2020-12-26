@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Inquiry;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -10,7 +11,7 @@ class InquiryController extends Controller
 {
     public function index()
     {
-        $inquiries = (new Inquiry())->all();
+        $inquiries = (new Inquiry())->orderBy('id', 'DESC')->get();
         return Inertia::render('admin/inquiries', compact('inquiries'));
     }
 
@@ -49,9 +50,9 @@ class InquiryController extends Controller
         //
     }
 
-    public function update(Request $request, $id)
+    public function update($id)
     {
-        //
+        (new Inquiry())->find($id)->update(['done' => Carbon::now()->toDateTimeString()]);
     }
 
     public function destroy($id)

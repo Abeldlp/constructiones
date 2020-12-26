@@ -34,6 +34,11 @@ __webpack_require__.r(__webpack_exports__);
   name: "createConstruction",
   components: {
     AdminNavbar: _components_adminNavbar__WEBPACK_IMPORTED_MODULE_0__.default
+  },
+  data: function data() {
+    return {
+      csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+    };
   }
 });
 
@@ -167,16 +172,29 @@ var _withId = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.withScopeId)("dat
 
 (0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-94421694");
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h1", null, "Create a construction work", -1
-/* HOISTED */
-);
+var _hoisted_1 = {
+  "class": "container mt-5 pt-5"
+};
+var _hoisted_2 = {
+  action: "/admin/nueva_obra",
+  method: "POST",
+  enctype: "multipart/form-data"
+};
+
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"form-group\" data-v-94421694><label for=\"product_image\" data-v-94421694>Imagen</label><input id=\"product_image\" type=\"file\" name=\"image\" required data-v-94421694></div><div class=\"form-group\" data-v-94421694><label for=\"product_price\" data-v-94421694>Titulo</label><input class=\"form-control\" id=\"product_price\" name=\"title\" data-v-94421694></div><div class=\"form-group\" data-v-94421694><label for=\"product_description\" data-v-94421694>Descripcion</label><textarea class=\"form-control\" id=\"product_description\" name=\"description\" data-v-94421694></textarea></div><button type=\"submit\" class=\"btn btn-primary\" data-v-94421694>Subir</button>", 4);
 
 (0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)();
 
 var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data, $options) {
   var _component_admin_navbar = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("admin-navbar");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_admin_navbar), _hoisted_1], 64
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_admin_navbar), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("form", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+    type: "hidden",
+    name: "_token",
+    value: $data.csrf
+  }, null, 8
+  /* PROPS */
+  , ["value"]), _hoisted_3])])], 64
   /* STABLE_FRAGMENT */
   );
 });

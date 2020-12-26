@@ -21,7 +21,7 @@ class CreateInquiriesTable extends Migration
             $table->string('tel')->nullable();
             $table->string('inquiry');
             $table->string('contact_method');
-            $table->timestamp('done')->default(null);
+            $table->timestamp('done')->nullable();
             $table->timestamps();
         });
     }

@@ -24,7 +24,19 @@ class ConstructionController extends Controller
 
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'image' => 'required',
+            'title' => '',
+            'description' => ''
+        ]);
+
+        $imagePath = $request->image->store('obras', 'public');
+
+        $dataToSave = array_merge($validatedData, [
+            'image' => $imagePath
+        ]);
+        (new Construction())->create($dataToSave);
+        return redirect('/admin');
     }
 
 

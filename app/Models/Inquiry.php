@@ -15,6 +15,7 @@ class Inquiry extends Model
         'email',
         'tel',
         'inquiry',
-        'contact_method'
+        'contact_method',
+        'done'
     ];
 }

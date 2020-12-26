@@ -30,10 +30,15 @@ Route::prefix('/')->group(function () {
     });
 
     Route::prefix('/admin')->group(function(){
-        Route::get('/nueva_obra', 'ConstructionController@create');
+        Route::prefix('/nueva_obra')->group(function(){
+            Route::get('/', 'ConstructionController@create');
+            Route::post('/', 'ConstructionController@store');
+        });
+
 
         Route::prefix('/clientes')->group(function () {
             Route::get('/', 'InquiryController@index');
+            Route::put('/update/{id}', 'InquiryController@update');
             Route::delete('/delete/{id}', 'InquiryController@destroy');
         });
     });
