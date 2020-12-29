@@ -29,7 +29,7 @@ Route::prefix('/')->group(function () {
         return Inertia::render('contact');
     });
 
-    Route::prefix('/admin')->group(function(){
+    Route::prefix('/admin')->middleware('auth')->group(function(){
         Route::prefix('/nueva_obra')->group(function(){
             Route::get('/', 'ConstructionController@create');
             Route::post('/', 'ConstructionController@store');
@@ -44,7 +44,7 @@ Route::prefix('/')->group(function () {
     });
 });
 
-
+Auth::routes();
 
 
 
