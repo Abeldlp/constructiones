@@ -3,16 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::prefix('/')->group(function () {
     Route::get('/', function () {
@@ -30,9 +20,13 @@ Route::prefix('/')->group(function () {
     });
 
     Route::prefix('/admin')->middleware('auth')->group(function(){
+
+        Route::get('/', 'PresupuestoController@index');
+
         Route::prefix('/nueva_obra')->group(function(){
             Route::get('/', 'ConstructionController@create');
             Route::post('/', 'ConstructionController@store');
+            Route::delete('/delete/{id}', 'ConstructionController@destroy');
         });
 
 

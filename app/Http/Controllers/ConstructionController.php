@@ -36,7 +36,7 @@ class ConstructionController extends Controller
             'image' => $imagePath
         ]);
         (new Construction())->create($dataToSave);
-        return redirect('/admin');
+        return redirect('/admin/nueva_obra');
     }
 
 
