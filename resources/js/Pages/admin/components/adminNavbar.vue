@@ -4,10 +4,10 @@
             <img id="logo" src="/storage/pageImages/logo.png"/>
             <ul class="d-flex align-items-center justify-content-between pt-3">
                 <inertia-link class="text-decoration-none text-dark" href="/admin"><li>Administrador</li></inertia-link>
-                <a class="text-decoration-none text-dark" href="/" target="_blank"><li>Pagina web</li></a>
                 <inertia-link class="text-decoration-none text-dark" href="/admin/nueva_obra"><li>Nueva obra</li></inertia-link>
                 <inertia-link class="text-decoration-none text-dark" href="/admin/clientes"><li>Clientes</li></inertia-link>
                 <inertia-link class="text-decoration-none text-dark" href="/admin"><li>Presupuetos</li></inertia-link>
+                <a class="text-decoration-none text-dark" href="/" target="_blank"><li>Pagina web</li></a>
             </ul>
         </div>
     </div>

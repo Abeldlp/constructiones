@@ -35526,6 +35526,14 @@ var map = {
 		"./resources/js/Pages/about.vue",
 		"resources_js_Pages_about_vue"
 	],
+	"./admin/adminMain": [
+		"./resources/js/Pages/admin/adminMain.vue",
+		"resources_js_Pages_admin_adminMain_vue"
+	],
+	"./admin/adminMain.vue": [
+		"./resources/js/Pages/admin/adminMain.vue",
+		"resources_js_Pages_admin_adminMain_vue"
+	],
 	"./admin/components/adminNavbar": [
 		"./resources/js/Pages/admin/components/adminNavbar.vue",
 		"resources_js_Pages_admin_components_adminNavbar_vue"
@@ -35712,7 +35720,7 @@ module.exports = webpackAsyncContext;
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_Pages_index_vue":1,"resources_js_Pages_about_vue":1,"resources_js_Pages_admin_components_adminNavbar_vue":1,"resources_js_Pages_admin_createConstruction_vue":1,"resources_js_Pages_admin_inquiries_vue":1,"resources_js_Pages_components_contactForm_vue":1,"resources_js_Pages_components_evaluation_vue":1,"resources_js_Pages_components_navbar_vue":1,"resources_js_Pages_components_personal_vue":1,"resources_js_Pages_components_project_vue":1,"resources_js_Pages_contact_vue":1,"resources_js_Pages_work_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_Pages_index_vue":1,"resources_js_Pages_about_vue":1,"resources_js_Pages_admin_adminMain_vue":1,"resources_js_Pages_admin_components_adminNavbar_vue":1,"resources_js_Pages_admin_createConstruction_vue":1,"resources_js_Pages_admin_inquiries_vue":1,"resources_js_Pages_components_contactForm_vue":1,"resources_js_Pages_components_evaluation_vue":1,"resources_js_Pages_components_navbar_vue":1,"resources_js_Pages_components_personal_vue":1,"resources_js_Pages_components_project_vue":1,"resources_js_Pages_contact_vue":1,"resources_js_Pages_work_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

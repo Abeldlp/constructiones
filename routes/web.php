@@ -21,7 +21,7 @@ Route::prefix('/')->group(function () {
 
     Route::prefix('/admin')->middleware('auth')->group(function(){
 
-        Route::get('/', 'PresupuestoController@index');
+        Route::get('/', 'BudgetController@index');
 
         Route::prefix('/nueva_obra')->group(function(){
             Route::get('/', 'ConstructionController@create');
